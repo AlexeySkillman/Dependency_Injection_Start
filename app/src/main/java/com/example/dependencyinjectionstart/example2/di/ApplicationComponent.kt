@@ -1,15 +1,23 @@
 package com.example.dependencyinjectionstart.example2.di
 
 import android.content.Context
-import com.example.dependencyinjectionstart.example2.presentation.MainActivity
+import com.example.dependencyinjectionstart.example2.di.annotations.ApplicationScopeSingletons
 import dagger.BindsInstance
 import dagger.Component
 
+@ApplicationScopeSingletons
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 
+//    fun getViewModel(): ExampleViewModel
+//
+//    fun getDatabase(): ExampleDatabase
+//
+//    fun getApiService(): ExampleApiService
+
     // Не можем использовать AppCompatActivity так как он не содержит @Inject
-    fun inject(activity: MainActivity)
+
+    fun activityComponentFactory(): ActivityComponent.Factory
 
 
 // В новых версиях появилось возможность использовать Factory вместо Builder

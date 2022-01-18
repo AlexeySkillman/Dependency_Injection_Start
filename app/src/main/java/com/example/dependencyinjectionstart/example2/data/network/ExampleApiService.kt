@@ -11,7 +11,7 @@ class ExampleApiService @Inject constructor(
 ) {
 
     fun method() {
-        Log.d(LOG_TAG, "ExampleApiService ${context.getString(R.string.app_name)} - $timeMillis")
+//        Log.d(LOG_TAG, "ExampleApiService ${context.getString(R.string.app_name)} - $timeMillis $this")
     }
 
     companion object {
